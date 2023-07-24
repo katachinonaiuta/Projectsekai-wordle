@@ -26,114 +26,114 @@ as.matrix(quiz,ncol=1)
  [8,] "1 *"              
  [9,] "2 **"             
 [10,] "7 *******"        
-然后请点击#first round里的代码,其中letter = yanyin代表第一个开出的字符是日语中的长音符.  
-as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)  
-as.matrix(game_song,ncol = 1)  
+然后请点击#first round里的代码,其中letter = yanyin代表第一个开出的字符是日语中的长音符.    
+as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)    
+as.matrix(game_song,ncol = 1)    
 在输出中可以看到第一轮的结果:  
- [1,] "8 ********"       
- [2,] "10 **********"    
- [3,] "3 ***"            
- [4,] "4 ****"           
- [5,] "14 **************"  
- [6,] "8 ***ー****"      
- [7,] "2 **"             
- [8,] "1 *"              
- [9,] "2 **"             
-[10,] "7 *******"        
-正确答案就在下方方便对照：  
- [1,] "ボッカデラベリタ"
- [2,] "ontherocks"      
- [3,] "キティ"          
- [4,] "ヒビカセ"        
- [5,] "HappyHalloween"  
- [6,] "星空オーケストラ"
- [7,] "テオ"            
- [8,] "街"              
- [9,] "相生"            
-[10,] "ONESELF"       
-进入第二轮请运行#rounds中的代码,在letter = c(letter , chi)括号中第二个位置输入第二轮被开的字符,这里是平假名和片假名的chi(也可以一次性输入多个被开字符)  
-需要额外注意的是在as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)中,  
-如果没有被猜中的曲目需要把clear_num设置为NULL(clear_num = NULL),被猜中的歌曲序号请clear_num = c()括号中用逗号分隔开来.  
-已开字符:  
+ [1,] "8 ********"         
+ [2,] "10 **********"      
+ [3,] "3 ***"              
+ [4,] "4 ****"             
+ [5,] "14 **************"    
+ [6,] "8 ***ー****"        
+ [7,] "2 **"               
+ [8,] "1 *"                
+ [9,] "2 **"               
+[10,] "7 *******"          
+正确答案就在下方方便对照：    
+ [1,] "ボッカデラベリタ"  
+ [2,] "ontherocks"        
+ [3,] "キティ"            
+ [4,] "ヒビカセ"          
+ [5,] "HappyHalloween"    
+ [6,] "星空オーケストラ"  
+ [7,] "テオ"              
+ [8,] "街"                
+ [9,] "相生"              
+[10,] "ONESELF"         
+进入第二轮请运行#rounds中的代码,在letter = c(letter , chi)括号中第二个位置输入第二轮被开的字符,这里是平假名和片假名的chi(也可以一次性输入多个被开字符)    
+需要额外注意的是在as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)中,    
+如果没有被猜中的曲目需要把clear_num设置为NULL(clear_num = NULL),被猜中的歌曲序号请clear_num = c()括号中用逗号分隔开来.    
+已开字符:    
 ーちチ  
-谜面:  
- [1,] "8 ********"       
- [2,] "10 **********"    
- [3,] "3 ***"            
- [4,] "4 ****"           
- [5,] "14 **************"
- [6,] "8 ***ー****"      
- [7,] "2 **"             
- [8,] "1 *"              
- [9,] "2 **"             
-[10,] "7 *******"         
+谜面:    
+ [1,] "8 ********"         
+ [2,] "10 **********"      
+ [3,] "3 ***"              
+ [4,] "4 ****"             
+ [5,] "14 **************"  
+ [6,] "8 ***ー****"        
+ [7,] "2 **"               
+ [8,] "1 *"                
+ [9,] "2 **"               
+[10,] "7 *******"           
 正确答案:  
- [1,] "ボッカデラベリタ"
+ [1,] "ボッカデラベリタ"  
  [2,] "ontherocks"      
  [3,] "キティ"          
  [4,] "ヒビカセ"        
- [5,] "HappyHalloween"  
- [6,] "星空オーケストラ"
+ [5,] "HappyHalloween"    
+ [6,] "星空オーケストラ"  
  [7,] "テオ"            
  [8,] "街"              
  [9,] "相生"            
 [10,] "ONESELF"       
 开o  
-letter = c(letter , o)
-
-as.name(str_c(letter,collapse = ""))
-as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)
-as.matrix(game_song,ncol = 1)
-已开字符:  
-ーちチoO
+letter = c(letter , o)  
+  
+as.name(str_c(letter,collapse = ""))  
+as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)  
+as.matrix(game_song,ncol = 1)  
+已开字符:    
+ーちチoO  
 谜面:  
  [1,] "8 ********"       
  [2,] "10 o*****o***"    
  [3,] "3 ***"            
  [4,] "4 ****"           
- [5,] "14 *********o****"
+ [5,] "14 *********o****"  
  [6,] "8 ***ー****"      
  [7,] "2 **"             
  [8,] "1 *"              
  [9,] "2 **"             
 [10,] "7 O******"     
 正确答案:  
- [1,] "ボッカデラベリタ"
+ [1,] "ボッカデラベリタ"  
  [2,] "ontherocks"      
  [3,] "キティ"          
  [4,] "ヒビカセ"        
- [5,] "HappyHalloween"  
- [6,] "星空オーケストラ"
+ [5,] "HappyHalloween"    
+ [6,] "星空オーケストラ"  
  [7,] "テオ"            
  [8,] "街"              
  [9,] "相生"            
 [10,] "ONESELF"      
 开te,且2已被猜出  
-letter = c(letter , te)
-
-as.name(str_c(letter,collapse = ""))
-as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)
-as.matrix(game_song,ncol = 1)
-已开字符:  
-ーちチoOてテ
+letter = c(letter , te)  
+  
+as.name(str_c(letter,collapse = ""))  
+as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)  
+as.matrix(game_song,ncol = 1)  
+已开字符:    
+ーちチoOてテ  
 谜面:  
  [1,] "8 ********"       
  [2,] "10 ontherocks"    
  [3,] "3 *テ*"           
  [4,] "4 ****"           
- [5,] "14 *********o****"
+ [5,] "14 *********o****"  
  [6,] "8 ***ー****"      
  [7,] "2 テ*"            
  [8,] "1 *"              
  [9,] "2 **"             
 [10,] "7 O******"    
 正确答案:  
- [1,] "ボッカデラベリタ"
+ [1,] "ボッカデラベリタ"  
  [2,] "ontherocks"      
  [3,] "キティ"          
  [4,] "ヒビカセ"        
- [5,] "HappyHalloween"  
- [6,] "星空オーケストラ"
+ [5,] "HappyHalloween"    
+ [6,] "星空オーケストラ"  
  [7,] "テオ"            
  [8,] "街"              
  [9,] "相生"            
