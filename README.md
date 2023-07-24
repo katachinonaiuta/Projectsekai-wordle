@@ -1,26 +1,26 @@
 # Projectsekai-wordle
-Code for SEGA's otoge Projectsekai wordle\n
-2023/7/25
-这是pjsk开字符游戏的R代码,尽管我觉得并不会有多少人用R来玩wordle但还是发上来.
-如果要开始游戏,先运行climb.R以爬取歌曲名称,结果可能会因为网站更新有所调整.
-然后先运行game.R中的dictionary部分,在这里可以检查所有英文日文符号和变量名的对应关系,例如en_n对应的是英文n,jp_i对应的是日文平假片假和大小いイぃィ.
-然后设置n为要猜多少首歌,例如要猜10首的话请设置n=10.
-接下来请运行start_game()函数和game_process()函数,到这里就可以开始游戏了.
-依次运行代码
-game = start_game(n)
-
-game_song = game$game_song;game_song
-quiz = game$quiz;quiz
-quiz_song = game$quiz_song;quiz_song
-quiz_song_len = game$quiz_song_len;quiz_song_len
-
-as.matrix(quiz,ncol=1)
-在最后的输出里可以看到谜面，例如：
- [1,] "8 ********"       
- [2,] "10 **********"    
- [3,] "3 ***"            
- [4,] "4 ****"           
- [5,] "14 **************"
+Code for SEGA's otoge Projectsekai wordle  
+2023/7/25  
+这是pjsk开字符游戏的R代码,尽管我觉得并不会有多少人用R来玩wordle但还是发上来.  
+如果要开始游戏,先运行climb.R以爬取歌曲名称,结果可能会因为网站更新有所调整.  
+然后先运行game.R中的dictionary部分,在这里可以检查所有英文日文符号和变量名的对应关系,例如en_n对应的是英文n,jp_i对应的是日文平假片假和大小いイぃィ.  
+然后设置n为要猜多少首歌,例如要猜10首的话请设置n=10.  
+接下来请运行start_game()函数和game_process()函数,到这里就可以开始游戏了.  
+依次运行代码  
+game = start_game(n)  
+  
+game_song = game$game_song;game_song  
+quiz = game$quiz;quiz  
+quiz_song = game$quiz_song;quiz_song  
+quiz_song_len = game$quiz_song_len;quiz_song_len  
+  
+as.matrix(quiz,ncol=1)  
+在最后的输出里可以看到谜面，例如：  
+ [1,] "8 ********"         
+ [2,] "10 **********"      
+ [3,] "3 ***"              
+ [4,] "4 ****"             
+ [5,] "14 **************"  
  [6,] "8 ********"       
  [7,] "2 **"             
  [8,] "1 *"              
