@@ -1,0 +1,185 @@
+#dictinoary
+a = c("a","A")
+b = c("b","B")
+c = c("c","C")
+d = c("d","D")
+e = c("e","E")
+f = c("f","F")
+g = c("g","G")
+h = c("h","H")
+i = c("i","I")
+j = c("j","J")
+k = c("k","K")
+l = c("l","L")
+m = c("m","M")
+en_n = c("n","N")
+o = c("o","O")
+p = c("p","P")
+q = c("q","Q")
+r = c("r","R")
+s = c("s","S")
+t = c("t","T")
+u = c("u","U")
+v = c("v","V")
+w = c("w","W")
+x = c("x","X")
+y = c("y","Y")
+z = c("z","Z")
+ka = c("か","カ")
+ki = c("き","キ")
+ku = c("く","ク")
+ke = c("け","ケ")
+ko = c("こ","コ")
+sa = c("さ","サ")
+shi = c("し","シ")
+su = c("す","ス")
+se = c("せ","セ")
+so = c("そ","ソ")
+ta = c("た","タ")
+chi = c("ち","チ")
+tsu = c("つ","ツ","ッ","っ")
+te = c("て","テ")
+to = c("と","ト")
+na = c("な","ナ")
+ni = c("に","ニ")
+nu = c("ぬ","ヌ")
+ne = c("ね","ネ")
+no = c("の","ノ")
+ha = c("は","ハ")
+hi = c("ヒ","ひ")
+fu = c("ふ","フ")
+he = c("へ")
+ho = c("ほ","ホ")
+ma = c("ま","マ")
+ya = c("や","ヤ","ゃ","ャ")
+yu = c("ゆ","ユ","ゅ","ュ")
+yo = c("よ","ヨ","ょ","ョ")
+ra = c("ら","ラ")
+ri = c("り","リ")
+ru = c("る","ル")
+re = c("れ","レ")
+ro = c("ろ","ロ")
+wa = c("わ","ワ")
+wo = c("を","ヲ")
+jp_n = c("ん","ン")
+jp_a = c("あ","ア","ぁ","ァ")
+jp_i = c("い","イ","ぃ","ィ")
+jp_u = c("う","ウ","ぅ","ゥ")
+jp_e = c("え","エ","ぇ","ェ")
+jp_o = c("お","オ","ぉ","ォ")
+ga = c("が","ガ")
+gi = c("ぎ","ギ")
+gu = c("ぐ","グ")
+ge = c("げ","ゲ")
+go = c("ご","ゴ")
+za = c("ざ","ザ")
+ji = c("じ","ジ")
+zu = c("ず","ズ")
+ze = c("ぜ","ゼ")
+zo = c("ぞ","ゾ")
+da = c("だ","ダ")
+di = c("ぢ","ヂ")
+du = c("ぶ","ブ")
+de = c("で","デ")
+do = c("ど","ド")
+ba = c("ば","バ")
+bi = c("び","ビ")
+bu = c("ぶ","ブ")
+be = c("べ")
+bo = c("ぼ","ボ")
+pa = c("ぱ","パ")
+pi = c("ぴ","ピ")
+pu = c("ぷ","プ")
+pe = c("ぺ")
+po = c("ぽ","ポ")
+num1 = c("1")
+num2 = c("2")
+num3 = c("3")
+num4 = c("4")
+num5 = c("5")
+num6 = c("6")
+num7 = c("7")
+num8 = c("8")
+num9 = c("9")
+num0 = c("0")
+yanyin = c("ー")
+vu = c("ヴ","ゔ")
+
+#start
+n = 10
+start_game <- function(n)
+{
+  game_song = sample(song_title,n)
+  quiz_song = c(1:n)
+  quiz_song_len = nchar(game_song)
+  for (i in 1:n)
+  {
+    quiz_song[i] = str_c(rep("*",quiz_song_len[i]),collapse = "")
+  }
+  quiz = paste(quiz_song_len,quiz_song)
+  return(list(game_song = game_song,quiz = quiz, quiz_song = quiz_song , quiz_song_len = quiz_song_len))
+}
+
+game = start_game(n)
+
+game_song = game$game_song;game_song
+quiz = game$quiz;quiz
+quiz_song = game$quiz_song;quiz_song
+quiz_song_len = game$quiz_song_len;quiz_song_len
+
+as.matrix(quiz,ncol=1)
+
+#round
+game_process <- function(clear_num, letter, game_song, quiz_song, quiz_song_len)
+{
+  o = letter
+  for (p in 1:length(o))
+  {
+    search = str_locate_all(string = game_song , pattern = o[p])
+    for (i in 1:n)
+    {
+      if (length(search[[i]][,1]) != 0)
+      {
+        location = search[[i]][,1]
+        len = length(location)
+        song_letters = str_split(quiz_song[i] , pattern = "" , simplify = T)
+        for (j in 1:len)
+        {
+          loca = location[j]
+          song_letters[loca] = o[p]
+        }
+        quiz_song[i] = str_c(song_letters,collapse = "")
+      }
+    }
+  }
+  
+  
+  clear_len = length(clear_num)
+  if (clear_len > 0)
+  {
+    for (i in 1:clear_len)
+    {
+      num_middle = clear_num[i]
+      quiz_song[num_middle] = game_song[num_middle]
+    }
+  }
+  return(paste(quiz_song_len,quiz_song))
+}
+
+
+#first round
+letter = yanyin
+
+as.matrix(game_process(clear_num = NULL, letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)
+as.matrix(game_song,ncol = 1)
+#rounds
+letter = c(letter,o)
+
+as.name(str_c(letter,collapse = ""))
+as.matrix(game_process(clear_num = c(1,6,10), letter = letter , game_song = game_song , quiz_song = quiz_song , quiz_song_len = quiz_song_len),ncol=1)
+as.matrix(game_song,ncol = 1)
+
+
+
+
+
