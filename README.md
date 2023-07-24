@@ -1,5 +1,5 @@
 # Projectsekai-wordle
-Code for SEGA's otoge Projectsekai wordle
+Code for SEGA's otoge Projectsekai wordle\n
 2023/7/25
 这是pjsk开字符游戏的R代码,尽管我觉得并不会有多少人用R来玩wordle但还是发上来.
 如果要开始游戏,先运行climb.R以爬取歌曲名称,结果可能会因为网站更新有所调整.
